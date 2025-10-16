@@ -26,8 +26,6 @@ except FileNotFoundError as e:
 
 @app.post("/chat")
 async def chat(request: ChatRequest):
-    """Main chatbot endpoint with validations and proper error handling"""
-
     # Validate PDF availability
     if pdf_context is None:
         raise HTTPException(

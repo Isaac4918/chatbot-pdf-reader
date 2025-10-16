@@ -8,11 +8,12 @@ load_dotenv()
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-async def stream_response(user_message: str, pdf_context: str):
-    """
+"""
     Generates a streaming response from the OpenAI model based on the provided PDF context.
     Compatible with the OpenAI SDK v1.x (handles ContentDeltaEvent correctly).
-    """
+"""
+async def stream_response(user_message: str, pdf_context: str):
+    
     prompt = f"""
     You are an assistant that answers questions **only** based on the following PDF content.
 
